@@ -1,5 +1,6 @@
-import Navbar from "./components/Navbar"
 import { useState } from 'react' 
+import Navbar from "./components/Navbar"
+import Products from './components/Products'
 
 
 
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
       <Navbar mode={mode} text={text} toggleMode={toggleMode}/>
-      
+      <Products/>
     </>
   )
 }
