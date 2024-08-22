@@ -6,10 +6,10 @@ const Products = () => {
     const [products, setProducts] = useState([])
 
     const getProducts = async () =>{
-        let url = await fetch('https://jsonplaceholder.typicode.com/posts');
+        let url = await fetch('https://dummyjson.com/products');
         let data = await url.json()
         // console.log(data);
-        setProducts(data);
+        setProducts(data.products);
     }
     useEffect(() => {
       getProducts()
