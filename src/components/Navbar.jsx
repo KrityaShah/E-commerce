@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Navbar.css"
 
+
 const Navbar = (props) => {
   return ( 
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -15,7 +16,7 @@ const Navbar = (props) => {
         <a className="nav-link" href="#">Home</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Posts</a>
+        <a className="nav-link" href="#">Products</a>
       </li>
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

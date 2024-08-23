@@ -1,11 +1,11 @@
 import { useState } from 'react' 
 import Navbar from "./components/Navbar"
 import Products from './components/Products'
-
+import Home from './components/Home'
 
 
 function App() {
-
+  
   const [mode, setMode] = useState('light')
   const [text, setText] = useState('dark')
 
@@ -23,6 +23,7 @@ function App() {
     <>
       <Navbar mode={mode} text={text} toggleMode={toggleMode}/>
       <Products/>
+      <Home/>
     </>
   )
 }
