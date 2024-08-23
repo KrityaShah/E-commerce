@@ -2,9 +2,22 @@ import { useState } from 'react'
 import Navbar from "./components/Navbar"
 import Products from './components/Products'
 import Home from './components/Home'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+  
+
 
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element : <><Navbar/> <Home/></>,
+    },
+    {
+      path : "/products",
+      element:  <><Navbar/><Products/></>,
+    },
+  ])
   
   const [mode, setMode] = useState('light')
   const [text, setText] = useState('dark')
@@ -21,9 +34,8 @@ function App() {
 
   return (
     <>
-      <Navbar mode={mode} text={text} toggleMode={toggleMode}/>
-      <Products/>
-      <Home/>
+     
+      <RouterProvider router={router} />
     </>
   )
 }

@@ -29,7 +29,7 @@ const Products = () => {
     }))} */}
 
 {products.map((product =>{
-        return<div className="card">
+        return<div className="card" key={product.id}>
         <div className="card-body">
           <h5 className="card-title">Product Name: {product.title}</h5>
           <h6 className="card-subtitle mb-2 text-muted">Price: {product.price}</h6>
