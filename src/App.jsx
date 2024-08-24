@@ -2,22 +2,17 @@ import { useState } from 'react'
 import Navbar from "./components/Navbar"
 import Products from './components/Products'
 import Home from './components/Home'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
   
 
 
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element : <><Navbar/> <Home/></>,
-    },
-    {
-      path : "/products",
-      element:  <><Navbar/><Products/></>,
-    },
-  ])
+
   
   const [mode, setMode] = useState('light')
   const [text, setText] = useState('dark')
@@ -34,8 +29,14 @@ function App() {
 
   return (
     <>
+    <Router>
+     <Navbar mode={mode} text={text} toggleMode={toggleMode}/>
+      <Routes>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/products' element={<Products/>}/>
+      </Routes>
+    </Router>
      
-      <RouterProvider router={router} />
     </>
   )
 }
