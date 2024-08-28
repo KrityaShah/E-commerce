@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 const Navbar = (props) => {
   return ( 
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-  <a className="navbar-brand" href="#">E-Commerce</a>
+  {/* <a className="navbar-brand" href="#">E-Commerce</a> */}
+  <h1 className='navbar-brand'>E-Commerce</h1>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -19,7 +20,10 @@ const Navbar = (props) => {
       <li className="nav-item">
         <Link className="nav-link" to="/products">Products</Link>
       </li>
-      <li className="nav-item dropdown">
+      <li className="nav-item">
+        <Link className="nav-link" to="/login">Login</Link>
+      </li>
+      {/* <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
@@ -29,7 +33,7 @@ const Navbar = (props) => {
           <div className="dropdown-divider"></div>
           <a className="dropdown-item" href="#">Something else here</a>
         </div>
-      </li>
+      </li> */}
       {/* <li className="nav-item">
         <a className="nav-link disabled" href="#">Disabled</a>
       </li> */}
