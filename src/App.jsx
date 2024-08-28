@@ -1,6 +1,7 @@
 import { useState } from 'react' 
 import Navbar from "./components/Navbar"
 import Products from './components/Products'
+import Login from './components/Login'
 import Home from './components/Home'
 import {
   BrowserRouter as Router,
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home/>}/>
         <Route path='/products' element={<Products/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </Router>
      
