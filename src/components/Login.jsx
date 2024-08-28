@@ -21,7 +21,7 @@ const Login = () => {
     <input placeholder='Username' {...register("username", { required: true, minLength: 3, maxLength:15 })} type="text" />
     {errors.username && <div className='error'>There is error in username</div> }
     <input placeholder='Password' {...register("password", { required: true, minLength: 8, maxLength:15 })} type="password"  />
-    {errors.username && <div>There is error in password</div> }
+    {errors.username && <div className='error'>There is error in password</div> }
     <input type="submit" value="submit" />
     </form>
     </div>
