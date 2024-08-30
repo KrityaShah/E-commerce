@@ -17,7 +17,7 @@ const Enquiry = () => {
 
   return (
     <>
-    <h1 style={{fontSize:'3.5rem'}}>Do you have any enquiry?</h1>
+    <h1 style={{fontSize:'3.5rem',marginTop:'80px'}}>Do you have any enquiry?</h1>
    <div className='enquiry-container'>
         
     <form action="" onSubmit={handleSubmit(onSubmit)}>

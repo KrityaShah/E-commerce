@@ -45,21 +45,21 @@
     outline: none;
   }
   
-  input[type="submit"] {
-    padding: 12px; /* Slightly increased padding */
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px; /* Increased font size */
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
+input[type="submit"] {
+  background-color: transparent;
+  color: #28a745;
+  border: 1px solid #28a745;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+input[type="submit"]:hover {
+  background-color: #28a745;
+  color: #fff;
+}
   
   .error {
     color: red;
