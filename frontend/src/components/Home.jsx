@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from './Carousel';
+import Service from './Service';
 import "./Home.css"; 
 import { Link } from 'react-router-dom';
 import Enquiry from './Enquiry';
@@ -11,6 +12,7 @@ const Home = () => {
       <p style={{fontSize:'2.5rem'}}>Shop anywhere, anytime</p>
       <Link to="/login"><button className="btn btn-outline-success" style={{ margin: '20px' }}>Shop now</button></Link>
       <Carousel />
+      <Service/>
       <Enquiry/>
     </div>
   );
