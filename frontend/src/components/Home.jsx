@@ -4,6 +4,7 @@ import Service from './Service';
 import "./Home.css"; 
 import { Link } from 'react-router-dom';
 import Enquiry from './Enquiry';
+import Footer from './Footer';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Carousel />
       <Service/>
       <Enquiry/>
+      <Footer/>
     </div>
   );
 }
