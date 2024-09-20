@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import Products from './components/Products'
 import Login from './components/Login'
 import Home from './components/Home'
+import Signup from './components/Signup'
 import {
   BrowserRouter as Router,
   Routes,
@@ -38,6 +39,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
       </Routes>
     </Router>
      
