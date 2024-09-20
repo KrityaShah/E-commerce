@@ -1,15 +1,17 @@
+const express = require('express');
+const app = express();
 
-const express= require('express')
-const dbConnect = require('./db')
-const app = express()
-dbConnect()
+const PORT = 5000;
 
-const port= 5000
-app.use(express.json())
- app.get('/', (req, res)=>{
-    res.send('hello nepal')
- })
- app.listen(port,()=>{
-  console.log(`api is listening on port: ${port}`);
-  
- })
+
+app.get("/", (req, res) =>{
+   res
+   .status(200)
+   .send("welcome to home");
+})
+
+
+app.listen(PORT, () =>{
+   console.log(`Server is running at ${PORT}`);
+   
+})
