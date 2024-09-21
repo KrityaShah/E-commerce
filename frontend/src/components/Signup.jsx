@@ -12,7 +12,7 @@ const Signup = () => {
         formState: { errors, isSubmitting },
       } = useForm()
 
-      const onSubmit = (data) => console.log(data)
+      const onSubmit = (data) => console.log("Successful!")
 
   return (
     <div className='signup-container'>
