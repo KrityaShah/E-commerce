@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm  } from "react-hook-form"
 import "./Signup.css"
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -11,6 +12,9 @@ const Signup = () => {
         
         formState: { errors, isSubmitting },
       } = useForm()
+      
+      const navigate = useNavigate(); 
+
       
       const onSubmit = async (data) => {
         if (data.password !== data.repassword) {
@@ -28,7 +32,13 @@ const Signup = () => {
             body: JSON.stringify(data)
           });
           let res = await response.json();
-          console.log(res);
+
+          if (response.ok) {
+            navigate("/login"); 
+            console.log(res);
+          } else {
+            console.log(res);
+          }
         } catch (error) {
           console.error(error);
           
