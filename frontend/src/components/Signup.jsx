@@ -11,8 +11,29 @@ const Signup = () => {
         
         formState: { errors, isSubmitting },
       } = useForm()
+      
+      const onSubmit = async (data) => {
+        if (data.password !== data.repassword) {
+          
+          console.log("Passwords do not match");
+          return;
+        }
 
-      const onSubmit = (data) => console.log("Successful!")
+        try {
+          let response = await fetch("http://localhost:5000/api/auth/register", {
+            method: "POST", 
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+          let res = await response.json();
+          console.log(res);
+        } catch (error) {
+          console.error(error);
+          
+        }
+      }
 
   return (
     <div className='signup-container'>
@@ -26,6 +47,10 @@ const Signup = () => {
     <input placeholder='Email' {...register("email", { required: {value: true, message: 'Please fill'}, minLength: {value: 3, message : 'Min length is 3'}})} type="email" />
 
     {errors.email && <div className='error'>{errors.email.message}</div> }
+
+    <input placeholder='Phone' {...register("phone", { required: {value: true, message: 'Please fill'}, minLength: {value: 3, message : 'Min length is 3'}})} type="text" />
+
+    {errors.phone && <div className='error'>{errors.phone.message}</div> }
 
     <input placeholder='Password' {...register("password", { required: {value: true, message:'Please fill'}, minLength: 8, maxLength:15 })} type="password"  />
 
