@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm  } from "react-hook-form"
 import "./Signup.css"
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../store/auth';
 
 const Signup = () => {
 
@@ -13,8 +14,10 @@ const Signup = () => {
         formState: { errors, isSubmitting },
       } = useForm()
       
+      
       const navigate = useNavigate(); 
-
+      
+      const {storeTokenInLS} = useAuth();
       
       const onSubmit = async (data) => {
         if (data.password !== data.repassword) {
@@ -31,9 +34,15 @@ const Signup = () => {
             },
             body: JSON.stringify(data)
           });
-          let res = await response.json();
+          
 
           if (response.ok) {
+            const res_data = await response.json()
+            // console.log("response from server", res_data);
+
+            // stored the token in localhost
+            storeTokenInLS(res_data.token);
+
             navigate("/login"); 
             console.log(res);
           } else {
