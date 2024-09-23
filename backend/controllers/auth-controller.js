@@ -44,29 +44,37 @@ const register = async (req, res) => {
 }
 
 // for login:
-
-const login = async (req, res) =>{
-
-
+const login = async (req, res) => {
     try {
-        const { email, password} = req.body;
-        const userExist = await User.findOne({email});
+        const { email, password } = req.body;
+        const userExist = await User.findOne({ email });
 
-        if(!userExist){
-            res
-            .status(400)
-            .json({message: "Invalid credentail"});
+        if (!userExist) {
+            
+            return res
+                .status(400)
+                .json({ message: "Invalid credential" });
         }
+
         const isPasswordValid = await bcrypt.compare(password, userExist.password);
 
-        if(isPasswordValid){
-            res
-            .status(200)
-            .json({message: "Login Sucessfull", token: await userExist.generateToken(), userId: userExist._id.toString()})
+        if (isPasswordValid) {
+            return res
+                .status(200)
+                .json({
+                    message: "Login Successful",
+                    token: await userExist.generateToken(),
+                    userId: userExist._id.toString()
+                });
+        } else {
+            return res
+                .status(400)
+                .json({ message: "Invalid credential" });
         }
     } catch (error) {
-        res.status(401).json({message: "invalid Credentail"});
+        return res.status(500).json({ message: "Server error" });
     }
 }
+
 
 module.exports = {home, register, login};
