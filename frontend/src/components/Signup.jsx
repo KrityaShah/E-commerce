@@ -40,9 +40,9 @@ const Signup = () => {
             const res_data = await response.json()
             // console.log("response from server", res_data);
 
+            alert("Register succesfull")
             // stored the token in localhost
             storeTokenInLS(res_data.token);
-
             navigate("/login"); 
             console.log(res);
           } else {
@@ -77,6 +77,7 @@ const Signup = () => {
 
     <input placeholder='Re-Enter Password' {...register("repassword", { required: {value: true, message:'Please fill'}, minLength: 8, maxLength:15 })} type="password"  />
     {errors.repassword && <div className='error'>{errors.repassword.message}</div> }
+    
     <input disabled={isSubmitting} type="submit" value="submit" />
     </form>
     </div>
@@ -84,3 +85,4 @@ const Signup = () => {
 }
 
 export default Signup
+

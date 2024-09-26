@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm  } from "react-hook-form"
 import "./Login.css"
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/auth'
 
 const Login = () => {
@@ -11,6 +12,8 @@ const Login = () => {
         
         formState: { errors, isSubmitting },
       } = useForm()
+
+      const navigate = useNavigate(); 
 
       const {storeTokenInLS} = useAuth();
 
@@ -29,6 +32,7 @@ const Login = () => {
             // console.log("response from server", res_data);
             storeTokenInLS(res_data.token);
             
+            navigate("/clienthomepage"); 
             alert("Sucessfull login");
             console.log(res);
           }else{
