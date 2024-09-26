@@ -1,6 +1,6 @@
 import { useState } from 'react' 
 import Navbar from "./components/Navbar" // Navbar1 for other pages
-import Navbar2 from "./components/Navbar2" // Navbar2 for ClientHomepage
+// import Navbar2 from "./components/Navbar2" // Navbar2 for ClientHomepage
 import Products from './components/Products'
 import Login from './components/Login'
 import Home from './components/Home'

@@ -1,14 +1,32 @@
 import React from 'react'
-import Navbar2 from './Navbar2'
+// import Navbar2 from './Navbar2'
+import { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../store/auth';
 
 const Logout = () => {
-  return <>
-    <Navbar2/>
-    <div>
-      Logout
-    </div>
+  const {LogoutUser} = useAuth();
 
-  </>
+  useEffect(() => {
+    
+  LogoutUser();
+    
+  } ,[LogoutUser])
+  
+  return <Navigate to="/login" />
 }
 
 export default Logout
+
+
+// export const Logout = () => {
+
+//   const {LogoutUser} = useAuth();
+
+//   useEffect(() => {
+    
+//   LogoutUser();
+    
+//   } ,[LogoutUser])
+//   return <Navigate to="/login" />
+// };

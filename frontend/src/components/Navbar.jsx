@@ -1,9 +1,10 @@
 import React from 'react'
 import "./Navbar.css"
 import { Link } from 'react-router-dom'
-
+import { useAuth } from '../store/auth'
 
 const Navbar = (props) => {
+  const {isLoggedIn} = useAuth();
   return ( 
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   {/* <a className="navbar-brand" href="#">E-Commerce</a> */}
@@ -20,9 +21,15 @@ const Navbar = (props) => {
       <li className="nav-item">
         <Link className="nav-link" to="/products">Products</Link>
       </li>
-      <li className="nav-item">
+      {isLoggedIn ?  <li className="nav-item">
+        <Link className="nav-link" to="/logout">logout</Link>
+      </li>
+      :<>
+       <li className="nav-item">
         <Link className="nav-link" to="/login">Login</Link>
       </li>
+      </> }
+     
       {/* <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown

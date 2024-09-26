@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "./ClientHomepage.css"
 import wave from '../assets/wave.svg';
-import Navbar2 from './Navbar2';
+import Navbar from './Navbar';
 
 const ClientHomepage = () => {
   return <>
-  <Navbar2/>
+  <Navbar/>
     <div className="main-container">
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', color: "black" }}>
    <h1 style={{ marginTop: '150px', fontSize:'4.5rem'}}>Welcome to Ecommerce!</h1>
